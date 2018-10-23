@@ -1,6 +1,6 @@
 {% set name = "ssh2-python" %}
-{% set version = "0.11.0.post1" %}
-{% set sha256 = "b624cf0f2a00bedcd2ce9e5348aa299ad946f6c56f3ea7d56d804e848e2e8ce9" %}
+{% set version = "0.16.0" %}
+{% set sha256 = "b824900cdd0a870db6f2ee013e768a42f22c5004e4104aa1524987ead1aa9726" %}
 
 package:
   name: {{ name|lower }}
@@ -15,7 +15,7 @@ build:
   skip: true  # [win]
   number: 0
   script:
-    - python setup.py install --single-version-externally-managed --record record.txt
+    - SYSTEM_LIBSSH2=1 python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
