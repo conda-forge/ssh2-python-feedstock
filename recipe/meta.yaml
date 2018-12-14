@@ -1,6 +1,6 @@
 {% set name = "ssh2-python" %}
-{% set version = "0.16.0" %}
-{% set sha256 = "b824900cdd0a870db6f2ee013e768a42f22c5004e4104aa1524987ead1aa9726" %}
+{% set version = "0.17.0.post3" %}
+{% set sha256 = "154d467240fd0d56f8edd29f0ec28f516cd4130864a667175e34ddf1464d750d" %}
 
 package:
   name: {{ name|lower }}
