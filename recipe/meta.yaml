@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   script:
     - SYSTEM_LIBSSH2=1 python setup.py install --single-version-externally-managed --record record.txt
 
