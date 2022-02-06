@@ -1,5 +1,5 @@
 {% set name = "ssh2-python" %}
-{% set version = "0.16.0" %}
+{% set version = "0.27.0" %}
 {% set sha256 = "b824900cdd0a870db6f2ee013e768a42f22c5004e4104aa1524987ead1aa9726" %}
 
 package:
@@ -7,22 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: b824900cdd0a870db6f2ee013e768a42f22c5004e4104aa1524987ead1aa9726
 
 build:
   skip: true  # [win]
   number: 1
   script:
-    - SYSTEM_LIBSSH2=1 python setup.py install --single-version-externally-managed --record record.txt
-
+    - SYSTEM_LIBSSH2=1 pip install . -vv
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
-    - setuptools
+    - pip
     - libssh2 1.8.*
-    - toolchain3
   run:
     - libssh2 1.8.*
 
