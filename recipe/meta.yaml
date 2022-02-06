@@ -20,10 +20,9 @@ requirements:
   host:
     - python
     - pip
-    - libssh2 1.8.*
+    - libssh2
   run:
     - python
-    - libssh2 1.8.*
 
 test:
   imports:
