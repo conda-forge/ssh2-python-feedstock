@@ -19,10 +19,11 @@ requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - python
+    - python >=3.6
     - pip
     - libssh2 1.8.*
   run:
+    - python >=3.6
     - libssh2 1.8.*
 
 test:
