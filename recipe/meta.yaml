@@ -1,5 +1,5 @@
 {% set name = "ssh2-python" %}
-{% set version = "0.27.0" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a65b14ff44b7a05ce90c70af0de644d30c1d07e76dac50df8e0d7d2b9409623b
+  sha256: af89e80c3203e7829b24eea688eaf5c5e279071aed1882238b4f44ec2144e7c5
 
 build:
   skip: true  # [win]
-  number: 2
+  number: 0
   script:
     - SYSTEM_LIBSSH2=1 pip install . -vv
 requirements:
@@ -30,10 +30,10 @@ test:
 
 about:
   home: http://github.com/ParallelSSH/ssh2-python
-  license: LGPL-2.1
+  license: LGPL-2.1-only
   license_family: LGPL
   license_file: LICENSE
-  summary: 'Super fact SSH library. Based on libssh2.'
+  summary: 'Super fast SSH library. Based on libssh2.'
 
   description: |
     Super fast SSH2 protocol library.
@@ -46,3 +46,4 @@ about:
 extra:
   recipe-maintainers:
     - pkittenis
+    - thewchan
