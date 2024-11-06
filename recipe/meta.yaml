@@ -11,12 +11,13 @@ source:
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 2
   script:
     - SYSTEM_LIBSSH2=1 pip install . -vv
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
