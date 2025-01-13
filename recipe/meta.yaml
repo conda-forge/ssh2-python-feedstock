@@ -1,22 +1,23 @@
 {% set name = "ssh2-python" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: af89e80c3203e7829b24eea688eaf5c5e279071aed1882238b4f44ec2144e7c5
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 96f0d894d360c2f780b823c2128868baabcccd6e5a7db69d0ce7d05dd05228b7
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 0
   script:
     - SYSTEM_LIBSSH2=1 pip install . -vv
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
@@ -39,7 +40,7 @@ about:
     Super fast SSH2 protocol library.
 
     ssh2-python provides Python bindings for libssh2.
-    
+
     Its only dependency is the libssh2 library.
   dev_url: https://github.com/ParallelSSH/ssh2-python
 
