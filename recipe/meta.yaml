@@ -22,6 +22,7 @@ requirements:
     - python
     - pip
     - libssh2
+    - setuptools
   run:
     - python
 
