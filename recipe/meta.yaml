@@ -29,6 +29,10 @@ requirements:
 test:
   imports:
     - ssh2.session
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://github.com/ParallelSSH/ssh2-python
