@@ -17,7 +17,6 @@ ssh2-python provides Python bindings for libssh2.
 
 Its only dependency is the libssh2 library.
 
-
 Current build status
 ====================
 
