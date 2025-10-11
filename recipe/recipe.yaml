@@ -15,10 +15,10 @@ source:
 build:
   number: 0
   # skip: win
-  env:
-    SYSTEM_LIBSSH2: 1
   script:
-    - pip install . -vv
+      env:
+        SYSTEM_LIBSSH2: 1
+      content: pip install . -vv
 
 requirements:
   build:
