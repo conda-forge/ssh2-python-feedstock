@@ -24,6 +24,8 @@ requirements:
   build:
     - ${{ compiler('c') }}
     - ${{ stdlib('c') }}
+    - if: win
+      then: openssl
   host:
     - python
     - pip
