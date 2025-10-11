@@ -11,6 +11,8 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
   sha256: ebaa2ab5c0d287ed02e1d55c7e18de03d06910a4c5194a88ef47c4cafc427cb4
+  patches:
+    - 0001-fix-lib.patch
 
 build:
   number: 0
