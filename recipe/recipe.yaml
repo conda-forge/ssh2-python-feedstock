@@ -14,7 +14,7 @@ source:
 
 build:
   number: 0
-  skip: win
+  # skip: win
   script:
     - SYSTEM_LIBSSH2=1 pip install . -vv
 
