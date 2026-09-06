@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: f981465ace35f96e0935b36091b61d17689d9e0e4f29b33a50882b92c45ddcbd
 
 build:
   skip: true  # [win]
-  number: 1
+  number: 2
   script:
     - SYSTEM_LIBSSH2=1 pip install . -vv
 requirements:
